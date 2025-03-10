@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid with Areas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: rgb(189, 189, 189);
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "header"
+                "sidebar"
+                "content"
+                "sidebar2"
+                "footer";
+        }
+
+        /* Default styles for all sections */
+        .box {
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .box1 {
+             background-color: skyblue;
+              grid-area: header; 
+            }
+        .box2 { 
+            background-color: rgb(92, 69, 92); 
+            grid-area: sidebar; 
+        }
+        .box3 { 
+            background-color: blueviolet;
+             grid-area: content; 
+            }
+        .box4 { 
+            background-color: rgb(163, 204, 97); 
+            grid-area: sidebar2;
+         }
+        .box5 { 
+            background-color: red;
+             grid-area: footer; 
+            }
+
+        /* Tablet View (2 columns) */
+        @media (min-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr 2fr;
+                grid-template-areas:
+                    "header header"
+                    "sidebar content"
+                    "sidebar2 content"
+                    "footer footer";
+            }
+        }
+
+        /* Desktop View (3 columns) */
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr 2fr 1fr;
+                grid-template-areas:
+                    "header header header"
+                    "sidebar content sidebar2"
+                    "footer footer footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="box box1">Header</div>
+        <div class="box box2">Sidebar</div>
+        <div class="box box3">Content</div>
+        <div class="box box4">Sidebar2</div>
+        <div class="box box5">Footer</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Task</title>
+    <link rel="stylesheet" href="print-task-style.css">
+    <style>
+                body {
+            background-color: lightgray;
+            text-align: left;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white !important; /* Remove background */
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Print Preview</h1>
+    <p>This text should be centered and without background when printed.</p>
+</body>
+</html>
